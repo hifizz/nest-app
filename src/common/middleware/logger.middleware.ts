@@ -12,7 +12,6 @@ export class LoggerMiddleware implements NestMiddleware {
 }
 
 export function logger(req, res, next) {
-  // @ts-ignore
   console.log('[Request]', req.url);
   next();
 }
