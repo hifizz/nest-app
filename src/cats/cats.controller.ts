@@ -3,7 +3,7 @@ import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interface/cat.interface';
 import { RolesGuard } from '../common/guard/roles.guard'
-import { LoggingInterceptor } from 'src/common/interceptor/logging.interceptor';
+import { LoggingInterceptor } from '../common/interceptor/logging.interceptor';
 
 @Controller('cats')
 @UseGuards(new RolesGuard())
