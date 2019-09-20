@@ -2,7 +2,7 @@ import { Controller, Post, Body, Get, UseGuards, UseInterceptors } from '@nestjs
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interface/cat.interface';
-import { RolesGuard } from '../common/guard/roles.guard'
+import { RolesGuard } from '../common/guard/roles.guard';
 import { LoggingInterceptor } from '../common/interceptor/logging.interceptor';
 
 @Controller('cats')
