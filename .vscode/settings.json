@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.tsx": "typescriptreact",
+        "*.js": "javascriptreact",
+        "*.ttml": "xml",
+        "*.ttss": "css"
+    }
+}

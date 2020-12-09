@@ -1,5 +1,6 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
+import * as path from 'path'
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { logger } from './common/middleware/logger.middleware';
@@ -8,13 +9,13 @@ import { PhotoModule } from './photo/photo.module';
 import { CatsController } from './cats/cats.controller';
 import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
-import { UsersModule } from './users/users.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
     CatsModule,
     PhotoModule,
-    UsersModule,
+    UserModule,
     AuthModule,
     TypeOrmModule.forRoot(),
   ],
@@ -29,6 +30,6 @@ export class AppModule implements NestModule {
       //   { path: 'cats', method: RequestMethod.GET },
       //   { path: 'cats', method: RequestMethod.POST }
       // )
-      .forRoutes(CatsController);
+      .forRoutes({path: '*', method: RequestMethod.ALL});
   }
 }
